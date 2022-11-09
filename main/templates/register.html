@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container w-25  bg-white mt-4 mb-4 p-4">
+        <!-- Pills navs -->
+        
+        <!-- Pills content -->
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+            
+                <div class="text-center">
+                
+                    <h3>Register</h3>
+                
+                </div>
+            <form class="mt-4">
+                
+                
+        
+                <!-- Password input -->
+                <div class="form-outline mb-2">
+                    <label class="form-label" for="customFile">Upload proof of employement</label>
+                    <input type="file" class="form-control" id="customFile" />     
+                </div>
+                
+                 <!-- Password input -->
+                <div class="form-outline mb-4">
+                    {% comment %} <input type="password" placeholder="password" class="form-control" /> {% endcomment %}
+                    <label class="form-label" for="sdepartment">Select department</label>
+                    <select class="form-select form-control" id="sdepartment" aria-label="Default select example">
+                        <option value="1">Computer Science</option>
+                        <option value="2">Computer Systems Engineering</option>
+                        <option value="3">Informatics</option>
+                        <option value="3">Information Technology</option>
+                    </select>
+                </div>
+
+        
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-danger btn-block mb-4">Register</button>
+        
+                <!-- Register buttons -->
+            </form>
+            </div>
+        </div>
+        <!-- Pills content -->
+    </div>
+
+{% endblock  %}
