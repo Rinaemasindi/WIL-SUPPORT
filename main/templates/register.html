@@ -14,27 +14,21 @@
                     <h3>Register</h3>
                 
                 </div>
-            <form class="mt-4">
+            <form method="POST" enctype="multipart/form-data" class="mt-4">
                 
                 
-        
-                <!-- Password input -->
+                {% csrf_token %}
+                 <!-- Password input -->
                 <div class="form-outline mb-2">
                     <label class="form-label" for="customFile">Upload proof of employement</label>
-                    <input type="file" class="form-control" id="customFile" />     
+                   {{ register_form.department_name }}     
                 </div>
                 
                  <!-- Password input -->
                 <div class="form-outline mb-4">
-                    {% comment %} <input type="password" placeholder="password" class="form-control" /> {% endcomment %}
                     <label class="form-label" for="sdepartment">Select department</label>
-                    <select class="form-select form-control" id="sdepartment" aria-label="Default select example">
-                        <option value="1">Computer Science</option>
-                        <option value="2">Computer Systems Engineering</option>
-                        <option value="3">Informatics</option>
-                        <option value="3">Information Technology</option>
-                    </select>
-                </div>
+                    {{ register_form.document }}
+                </div> 
 
         
                 <!-- Submit button -->

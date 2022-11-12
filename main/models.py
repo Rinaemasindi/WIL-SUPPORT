@@ -7,7 +7,7 @@ class Student(models.Model):
     student_number = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
     password = models.CharField(max_length=200)
-    IsRegistered = models.BooleanField(default=False)
+
 
     def __str__(self):
         return self.first_name + self.last_name
@@ -28,9 +28,17 @@ class Coordinator(models.Model):
     
 
 class Register(models.Model):
-    document = models.FileField()
-    # department = 
-    student_id = models.ForeignKey("Student", on_delete=models.SET_NULL) 
+    
+    DEPT_CHOICES = (
+        ('Computer Science', 'Computer Science'),
+        ('Computer Systems Engineering', 'Computer Systems Engineering'),
+        ('Informatics', 'Informatics'),
+        ('Information Technology', 'Information Technology'),
+    )
+
+    department_name = models.CharField(max_length=100, default="", choices=DEPT_CHOICES)
+    document = models.FileField(default="")
+    student = models.ForeignKey("Student", default="", on_delete=models.CASCADE) 
 
     def __str__(self):
         return self.pk
