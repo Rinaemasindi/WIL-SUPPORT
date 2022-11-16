@@ -1,0 +1,23 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+    <!-- {% if request.user.is_authenticated %}
+
+        {% trans 'Your username is' %} <b>{{ request.user.username }}</b>.
+
+    {% else %}
+
+        {% trans 'You are a guest.' %}
+
+    {% endif %} -->
+
+    <h1 class="display-4">Welcome to WIL-SUPPORT</h1>
+
+    <p class="lead">Please read the instractions page on how to register your WIL module</p>
+
+    <p class="lead"><a href="{% url 'instractions' %}">Read Instractions here </a></p>
+
+{% endblock %}

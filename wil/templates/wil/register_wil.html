@@ -1,0 +1,40 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+
+
+
+    <h4>{% trans 'Register-wil Page' %}</h4>
+     <form method="POST" enctype="multipart/form-data" class="mt-4">
+                
+                
+                {% csrf_token %}
+                 <!-- Password input -->
+                
+                
+                 <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="sdepartment">Enter student number</label>
+                    {{ RegistrationForm.student_number }}
+                </div> 
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="sdepartment">Select department</label>
+                    {{ RegistrationForm.department }}
+                </div> 
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="sdepartment">Upload proof of employement</label>
+                    {{ RegistrationForm.uploaded_file }}
+                </div> 
+
+        
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-danger btn-block mb-4">Register</button>
+        
+                <!-- Register buttons -->
+            </form>
+
+
+{% endblock %}
